@@ -10,6 +10,7 @@ Los datos de partida del contenedor se ubican en el directorio `build-config` en
 
 directorio | fichero  | uso
 ---|---|---
+
 -- | ansible.cfg | Parametrización de Ansible y plugins
 -- | requierements.txt | Elementos de python a incluir en el contenedor
 -- | ssh_config.conf | Personalización del acceso por SSH (Necesario en conmutadores viejos)
