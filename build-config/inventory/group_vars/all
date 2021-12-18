@@ -1,0 +1,8 @@
+ansible_port: 22
+ansible_user: usuario
+
+ansible_password: userpass
+
+ansible_become: true
+ansible_become_user: root
+ansible_become_password: userpass

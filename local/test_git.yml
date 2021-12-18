@@ -1,0 +1,17 @@
+- name: Playbook de pruebas
+  hosts: all
+  become: yes
+  become_user: root
+
+  
+  tasks:
+    - name: "Prueba"
+      lvrfrc87.git_acp.git_acp:
+        path: "~/test_directory/repo"
+        branch: master
+        comment: Add file1.
+        add: [ file1 ]
+        mode: local
+        url: /Users/federicoolivieri/test_directory/repo.git
+      delegate_to: localhost
+      

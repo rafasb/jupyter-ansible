@@ -1,0 +1,27 @@
+- name: Playbook de pruebas
+  hosts: all
+  become: yes
+  become_user: root
+
+  
+  tasks:
+
+  # - name: Información del host
+  #   debug:
+  #     msg: "{{ansible_facts}}"
+  #   register: info
+  
+    - name: Información del host
+      copy:
+          content: "{{ansible_facts | to_nice_yaml(indent=2) | trim | indent(4)}}"
+          dest: info.yml 
+
+    - name: Guarda la información en la carpeta de destino
+      fetch: 
+          src: "info.yml" 
+          dest: resultados
+    
+    - name: Elimina el fichero remoto
+      file:
+          path: /tmp/info.yml
+          state: absent
